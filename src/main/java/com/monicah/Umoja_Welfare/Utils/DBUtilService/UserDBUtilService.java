@@ -1,4 +1,4 @@
-package com.monicah.Umoja_Welfare.Utils.UserDBUtilService;
+package com.monicah.Umoja_Welfare.Utils.DBUtilService;
 
 import com.monicah.Umoja_Welfare.Entity.UserEntity;
 import com.monicah.Umoja_Welfare.Repository.UserRepository;

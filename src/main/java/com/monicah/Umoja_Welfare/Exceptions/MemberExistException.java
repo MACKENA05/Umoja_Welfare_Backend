@@ -1,7 +1,12 @@
 package com.monicah.Umoja_Welfare.Exceptions;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 public class MemberExistException extends RuntimeException {
-  public MemberExistException(String message) {
-    super(message);
-  }
+    private final String message;
+    @Override
+    public String getMessage() {
+        return message; // Return the custom message
+    }
 }

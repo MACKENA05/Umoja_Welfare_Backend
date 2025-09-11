@@ -1,5 +1,6 @@
 package com.monicah.Umoja_Welfare.Config;
 
+import com.monicah.Umoja_Welfare.Auth.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

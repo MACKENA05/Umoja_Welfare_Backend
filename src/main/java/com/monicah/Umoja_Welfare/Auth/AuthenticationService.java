@@ -2,20 +2,15 @@ package com.monicah.Umoja_Welfare.Auth;
 
 
 import com.google.gson.Gson;
-import com.monicah.Umoja_Welfare.Auth.AuthenticationRequest;
-import com.monicah.Umoja_Welfare.Auth.AuthenticationResponse;
-import com.monicah.Umoja_Welfare.Config.JwtService;
 import com.monicah.Umoja_Welfare.Entity.Role;
 import com.monicah.Umoja_Welfare.Entity.UserEntity;
 import com.monicah.Umoja_Welfare.Exceptions.UserExistException;
 import com.monicah.Umoja_Welfare.Repository.UserRepository;
-import com.monicah.Umoja_Welfare.Utils.UserDBUtilService.UserDBUtilService;
+import com.monicah.Umoja_Welfare.Utils.DBUtilService.UserDBUtilService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
