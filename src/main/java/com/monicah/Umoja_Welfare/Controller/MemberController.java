@@ -2,21 +2,19 @@ package com.monicah.Umoja_Welfare.Controller;
 
 import com.monicah.Umoja_Welfare.DTO.BaseApiResponse;
 import com.monicah.Umoja_Welfare.DTO.request.MemberDTO;
-import com.monicah.Umoja_Welfare.Service.RegisterWelfareMembers;
+import com.monicah.Umoja_Welfare.Service.RegisterWelfareMembersService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping(path= "api/v1/auth")
 @RequiredArgsConstructor
 public class MemberController {
     @Autowired
-    private RegisterWelfareMembers registerWelfareMembers;
+    private RegisterWelfareMembersService registerWelfareMembers;
     @PostMapping("/member_register")
     public BaseApiResponse registerMember (@RequestBody @Valid MemberDTO memberDTO) throws Exception{
         return registerWelfareMembers.RegisterMembers(memberDTO);
@@ -47,6 +45,4 @@ public class MemberController {
         }
 
     }
-
-
 }

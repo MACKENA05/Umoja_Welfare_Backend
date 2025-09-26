@@ -6,7 +6,7 @@ import com.monicah.Umoja_Welfare.DTO.response.MemberResponseDTO;
 import com.monicah.Umoja_Welfare.Entity.MemberEntity;
 import com.monicah.Umoja_Welfare.Exceptions.MemberExistException;
 import com.monicah.Umoja_Welfare.Repository.MemberRepository;
-import com.monicah.Umoja_Welfare.Service.RegisterWelfareMembers;
+import com.monicah.Umoja_Welfare.Service.RegisterWelfareMembersService;
 import com.monicah.Umoja_Welfare.Utils.DBUtilService.MemberDBUtilService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,13 +15,12 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
 
-public class RegisterWelfareMembersImpl implements RegisterWelfareMembers {
+public class RegisterWelfareMembersImpl implements RegisterWelfareMembersService {
     @Autowired
     private final MemberDBUtilService memberDBUtilService;
     private final MemberRepository memberRepository;
@@ -37,7 +36,7 @@ public class RegisterWelfareMembersImpl implements RegisterWelfareMembers {
                     .status(404)
                     .message("Error!")
                     .errors(" Member with this phone or email already exists!")
-                    //.errors("member with with Phone No: " + memberDTO.getPhoneNumber()+ "exists!")
+                    //.errors("member with Phone No: " + memberDTO.getPhoneNumber()+ "exists!")
                     .build();
         }
         var member = MemberEntity.builder()
@@ -100,4 +99,5 @@ public class RegisterWelfareMembersImpl implements RegisterWelfareMembers {
         return new BaseApiResponse(memberDetails, 200, "Members fetched successfully", null);
 
     }
+
 }
