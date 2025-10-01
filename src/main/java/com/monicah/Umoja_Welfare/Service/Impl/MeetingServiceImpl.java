@@ -46,7 +46,10 @@ public class MeetingServiceImpl implements MeetingService {
                 .meetingNotes(meetingRegisterDTO.getMeetingNotes())
                 .build();
   MeetingRegisterEntity meeting = meetingDBUtilService.CreateMeeting(createMeetings);
-  return new BaseApiResponse(createMeetings, 200, "Meeting created successfully", null);
+  return new BaseApiResponse(createMeetings,
+          200,
+          "Meeting created successfully",
+          null);
     }
 
 }

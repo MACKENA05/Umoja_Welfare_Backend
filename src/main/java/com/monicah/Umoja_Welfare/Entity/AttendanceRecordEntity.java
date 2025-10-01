@@ -49,12 +49,11 @@ public class AttendanceRecordEntity implements Serializable {
     @Column(updatable = false)
     private LocalDateTime createdAt;
 
-
     @UpdateTimestamp
     private LocalDateTime updatedAt;
     // Many attendance records belong to one member
     @ManyToOne
-    @JoinColumn(name = "phone_number", nullable = false)
+    @JoinColumn(name = "member_id", nullable = false)
     private MemberEntity member;
 
     // Many attendance records belong to one meeting

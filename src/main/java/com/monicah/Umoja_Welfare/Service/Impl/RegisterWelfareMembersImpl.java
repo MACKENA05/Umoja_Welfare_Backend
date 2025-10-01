@@ -77,7 +77,10 @@ public class RegisterWelfareMembersImpl implements RegisterWelfareMembersService
         memberEntity.setUpdatedAt(LocalDateTime.now());
         memberEntity.setEmail(memberDTO.getEmail());
         MemberEntity editMemberEntity = memberRepository.save(memberEntity);
-        return new BaseApiResponse(true, 200, "Member details updated successfully", editMemberEntity);
+        return new BaseApiResponse(true,
+                200,
+                "Member details updated successfully",
+                editMemberEntity);
 
     }
     @Override
@@ -96,7 +99,10 @@ public class RegisterWelfareMembersImpl implements RegisterWelfareMembersService
                     return memberResponseDTO;
                 }
                 ).toList();
-        return new BaseApiResponse(memberDetails, 200, "Members fetched successfully", null);
+        return new BaseApiResponse(memberDetails,
+                200,
+                "Members fetched successfully",
+                null);
 
     }
 

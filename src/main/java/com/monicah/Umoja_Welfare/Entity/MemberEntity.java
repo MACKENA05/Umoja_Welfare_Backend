@@ -1,10 +1,7 @@
 package com.monicah.Umoja_Welfare.Entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -21,6 +18,8 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(exclude = "attendanceRecords")  // 🚀 prevents lazy load in logs
+
 
 public class MemberEntity implements Serializable {
     @Id
@@ -60,6 +59,7 @@ public class MemberEntity implements Serializable {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AttendanceRecordEntity> attendanceRecords = new ArrayList<>();
 

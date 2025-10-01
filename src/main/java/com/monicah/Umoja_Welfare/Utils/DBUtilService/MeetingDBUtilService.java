@@ -15,8 +15,7 @@ import java.util.Optional;
 @Slf4j
 @Service
 public class MeetingDBUtilService {
-   // @Autowired
-   private final MeetingRegisterRepository meetingRegisterRepository;
+      private final MeetingRegisterRepository meetingRegisterRepository;
     public MeetingRegisterEntity CreateMeeting (MeetingRegisterEntity meetingRegisterEntity){
         log.info("Saving meeting: {}", meetingRegisterEntity);
         return meetingRegisterRepository.save(meetingRegisterEntity);

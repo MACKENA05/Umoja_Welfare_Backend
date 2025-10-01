@@ -15,10 +15,13 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class AttendanceRecordDTO implements Serializable {
     private Long id;
+    private Long meetingId;
+    private Long memberId;
     private AttendanceStatus attendanceStatus= AttendanceStatus.PRESENT;
     private MeetingType meetingType = MeetingType.MONTHLY;
     private LocalDateTime arrivalTime;
     private BigDecimal penaltyAmount = BigDecimal.ZERO;
+    private String phoneNumber;
     private boolean penaltyPaid = false;
 
 }

@@ -15,6 +15,8 @@ import java.util.Optional;
 public interface MeetingRegisterRepository extends JpaRepository<MeetingRegisterEntity, Long>{
   //Optional<MeetingRegisterEntity> findByMeetingDate (LocalDate meetingDate);
     List<MeetingRegisterEntity> findAllByMeetingDate(LocalDate meetingDate);
+
+  Optional<MeetingRegisterEntity> findById(Long id);
   //@Query("SELECT m FROM MeetingRegisterEntity m WHERE DATE(m.meetingDate) = :meetingDate")
   //List<MeetingRegisterEntity> findAllByMeetingDate(@Param("meetingDate") LocalDate meetingDate);
 

@@ -15,6 +15,16 @@ import java.util.stream.Collectors;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
+    @ExceptionHandler(MemberExistException.class)
+    public ResponseEntity<BaseApiResponse> handleMemberExistException(MemberExistException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(new BaseApiResponse(false, 404, ex.getMessage(), null));
+    }
+    @ExceptionHandler(RegisterExistException.class)
+    public ResponseEntity<BaseApiResponse> handleRegisterExistException(RegisterExistException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(new BaseApiResponse(false, 404, ex.getMessage(), null));
+    }
     @ExceptionHandler(UserExistException.class)
     public ResponseEntity<?> handleUserExist(UserExistException ex) {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(
