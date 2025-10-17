@@ -39,6 +39,8 @@ public class AttendanceRecordEntity implements Serializable {
 
     @Column(precision = 8,scale = 2)
     private BigDecimal penaltyAmount = BigDecimal.ZERO;
+    @Column(name="monthly_contribution", precision = 8,scale = 2)
+    private BigDecimal monthlyContribution;
 
     @Column(nullable = false)
     private boolean penaltyPaid;

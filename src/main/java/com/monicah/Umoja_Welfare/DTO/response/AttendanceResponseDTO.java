@@ -14,11 +14,12 @@ import java.time.LocalDateTime;
 @Data
 public class AttendanceResponseDTO {
     private Long id;
-    private String phoneNumber;   // from MemberEntity
-    private Long meetingId;       // from MeetingRegisterEntity
-    private AttendanceStatus attendanceStatus;
-    private MeetingType meetingType;
+    private String firstName;
+    private String lastName;
+   // private MeetingType meetingType;
     private LocalDateTime arrivalTime;
-    private BigDecimal penaltyAmount;
-    private boolean penaltyPaid;
+   // private BigDecimal penaltyAmount;
+   // private boolean penaltyPaid;
+    private BigDecimal monthlyContribution;
+
 }
